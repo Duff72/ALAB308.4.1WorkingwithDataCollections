@@ -33,6 +33,8 @@ for (let i = 1; i < data.length; i++) {
   people.push(person);
   // couldn't figure out how to dynamically set the property names so i set them explicitly
 }
+
+//people is an array of person objects
 console.log(people);
 
 //Part 4: Sorting and Manipulating Data
@@ -51,10 +53,13 @@ people.splice(1, 0, barry);
 //Add the following object to the end of the array:
 // { id: "7", name: "Bilbo", occupation: "None", age: "111" }
 let bilbo = { id: "7", name: "Bilbo", occupation: "None", age: "111" };
+//"I don't know half of you half as well as I should like, and I like less than half of you half as well as you deserve." -Bilbo Baggins
+
 people.push(bilbo);
 console.log(people);
 
 //Finally, use the values of each object within the array and the array’s length property to calculate the average age of the group. This calculation should be accomplished using a loop.
+
 let total = 0;
 let average = 0;
 people.forEach((person) => {
@@ -76,14 +81,12 @@ for (const person in people) {
   csv.push(x);
 }
 
-// console.log(csv.join());
-
 let newArr = [];
 for (const key in people[0]) {
   //first row of csv
   newArr += key + ",";
 }
 
-fullCircle = newArr.concat("\\n" + csv).slice(0, -2);
+fullCircle = newArr.concat("\\n" + csv).slice(0, -2); //slice to remove the final "/n"
 
 console.log(fullCircle);
